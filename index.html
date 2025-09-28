@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3NC4YPT10N - Advanced Cyber Security Hub 2025</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.3/qrcode.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Source+Code+Pro:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Code Pro', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 122, 0.1) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(0, 255, 65, 0.02) 0%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: -1;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid #00ff41;
+            border-radius: 0;
+            margin: 20px 0;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 65, 0.3),
+                inset 0 0 20px rgba(0, 255, 65, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 98px,
+                rgba(0, 255, 65, 0.05) 100px
+            );
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        h1 {
+            font-family: 'Orbitron', monospace;
+            color: #00ff41;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 
+                0 0 10px #00ff41,
+                0 0 20px #00ff41,
+                0 0 30px #00ff41;
+            letter-spacing: 5px;
+            position: relative;
+            z-index: 1;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41; }
+            to { text-shadow: 0 0 20px #00ff41, 0 0 30px #00ff41, 0 0 40px #00ff41; }
+        }
+
+        .subtitle {
+            color: #ff0080;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 30px 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border: 1px solid #00ff41;
+        }
+
+        .tab-btn {
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Source Code Pro', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .tab-btn:hover::before,
+        .tab-btn.active::before {
+            left: 100%;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: rgba(0, 255, 65, 0.2);
+            box-shadow: 
+                0 0 15px rgba(0, 255, 65, 0.5),
+                inset 0 0 15px rgba(0, 255, 65, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 255, 65, 0.05) 100%);
+            border: 1px solid #00ff41;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 65, 0.3),
+                inset 0 0 20px rgba(0, 0, 0, 0.5);
+            display: none;
+            position: relative;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeInCyber 0.5s ease-in;
+        }
+
+        @keyframes fadeInCyber {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px) scale(0.95);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        h2 {
+            font-family: 'Orbitron', monospace;
+            color: #00ff41;
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff0080;
+            animation: underlineExpand 2s ease-out;
+        }
+
+        @keyframes underlineExpand {
+            to { width: 100%; }
+        }
+
+        h3 {
+            color: #ff0080;
+            margin: 30px 0 20px 0;
+            font-size: 1.6rem;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .encryption-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .encryption-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 255, 65, 0.1) 100%);
+            color: #00ff41;
+            padding: 30px;
+            border: 1px solid #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .encryption-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .encryption-card:hover::before {
+            left: 100%;
+        }
+
+        .encryption-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.4);
+            border-color: #ff0080;
+        }
+
+        .encryption-card h4 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ff0080;
+        }
+
+        .status-badge {
+            background: #ff0080;
+            color: #000;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+            border: 1px solid #ff0080;
+        }
+
+        .status-badge.new {
+            background: #00ff41;
+            border-color: #00ff41;
+            animation: newBadgeGlow 2s infinite;
+        }
+
+        .status-badge.quantum {
+            background: #ff4500;
+            border-color: #ff4500;
+        }
+
+        @keyframes newBadgeGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(0, 255, 65, 0.8); }
+        }
+
+        .qr-generator {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(255, 0, 128, 0.1) 100%);
+            padding: 40px;
+            border: 1px solid #ff0080;
+            margin: 30px 0;
+            color: #00ff41;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+        }
+
+        .qr-input-group {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .qr-input, .qr-select {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            border: 1px solid #00ff41;
+            background: rgba(0, 0, 0, 0.8);
+            color: #00ff41;
+            font-size: 1rem;
+            font-family: 'Source Code Pro', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .qr-input:focus, .qr-select:focus {
+            outline: none;
+            border-color: #ff0080;
+            box-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+        }
+
+        .qr-btn {
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Source Code Pro', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .qr-btn:hover::before {
+            left: 100%;
+        }
+
+        .qr-btn:hover {
+            background: rgba(0, 255, 65, 0.3);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .qr-output {
+            text-align: center;
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff41;
+        }
+
+        .threat-alert {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid #ff0000;
+            border-left: 5px solid #ff0000;
+            color: #ff4444;
+            position: relative;
+        }
+
+        .threat-alert::before {
+            content: "⚠ ";
+            font-size: 1.5rem;
+            color: #ff0000;
+            animation: warningBlink 1s infinite;
+        }
+
+        @keyframes warningBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .code-block {
+            background: #000;
+            color: #00ff41;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #00ff41;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: ">>> ENCRYPTED DATA <<<";
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            background: #00ff41;
+            color: #000;
+            padding: 2px 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 15px 25px;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff41;
+        }
+
+        .spec-label {
+            color: #ff0080;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .spec-value {
+            color: #00ff41;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #00ff41 0%, #ff0080 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 255, 65, 0.05) 100%);
+            padding: 25px;
+            border: 1px solid #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            background: #00ff41;
+            border: 3px solid #000;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        .year {
+            background: linear-gradient(135deg, #ff0080 0%, #ff4500 100%);
+            color: #000;
+            padding: 8px 15px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 255, 65, 0.1) 100%);
+            color: #00ff41;
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+            border: 1px solid #00ff41;
+            border-bottom: none;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff41, transparent);
+            animation: footerScan 3s linear infinite;
+        }
+
+        @keyframes footerScan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .ascii-art {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.8rem;
+            line-height: 1;
+            color: #00ff41;
+            text-align: center;
+            margin: 20px 0;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .qr-input-group {
+                flex-direction: column;
+            }
+            
+            .encryption-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .glitch {
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix-bg" id="matrixBg"></div>
+    
+    <div class="container">
+        <header>
+            <div class="ascii-art">
+    ██████╗ ███╗   ██╗ ██████╗██╗  ██╗██╗   ██╗██████╗ ████████╗ ██╗ ██████╗ ███╗   ██╗
+    ╚════██╗████╗  ██║██╔════╝██║  ██║╚██╗ ██╔╝██╔══██╗╚══██╔══╝███║██╔═══██╗████╗  ██║
+     █████╔╝██╔██╗ ██║██║     ███████║ ╚████╔╝ ██████╔╝   ██║   ╚██║██║   ██║██╔██╗ ██║
+     ╚═══██╗██║╚██╗██║██║     ╚════██║  ╚██╔╝  ██╔═══╝    ██║    ██║██║   ██║██║╚██╗██║
+    ██████╔╝██║ ╚████║╚██████╗     ██║   ██║   ██║        ██║    ██║╚██████╔╝██║ ╚████║
+    ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝     ╚═╝   ╚═╝   ╚═╝        ╚═╝    ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+            </div>
+            <h1 class="glitch">3NC4YPT10N</h1>
+            <p class="subtitle">>>> ADVANCED CYBER SECURITY HUB 2025 <<<</p>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">
+                [CLASSIFIED] • [SECURE] • [QUANTUM-RESISTANT] • [POST-QUANTUM READY]
+            </p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showSection('overview')">[OVERVIEW]</button>
+            <button class="tab-btn" onclick="showSection('latest-2025')">[2025 STANDARDS]</button>
+            <button class="tab-btn" onclick="showSection('post-quantum')">[POST-QUANTUM]</button>
+            <button class="tab-btn" onclick="showSection('lightweight')">[LIGHTWEIGHT]</button>
+            <button class="tab-btn" onclick="showSection('threats')">[THREAT INTEL]</button>
+            <button class="tab-btn" onclick="showSection('qr-generator')">[QR-GEN]</button>
+        </div>
+
+        <div id="overview" class="content-section active">
+            <h2>>> SYSTEM OVERVIEW</h2>
+            <div class="threat-alert">
+                <h3>CRITICAL SECURITY BRIEFING</h3>
+                <p>The cybersecurity landscape has reached a critical inflection point in 2025. With quantum computing threats materializing and IoT device proliferation accelerating, traditional encryption methods are under unprecedented pressure. This hub provides real-time intelligence on the latest cryptographic standards and defensive strategies.</p>
+            </div>
+
+            <h3>ENCRYPTION MISSION CRITICAL AREAS:</h3>
+            <div class="code-block">
+[SECURE] Personal & Corporate Communications
+[SECURE] Financial Transaction Networks  
+[SECURE] Healthcare Data Protection Systems
+[SECURE] Government & Military Communications
+[SECURE] IoT Device Security Protocols
+[SECURE] Quantum-Resistant Infrastructure
+            </div>
+
+            <h3>2025 SECURITY LANDSCAPE STATUS:</h3>
+            <div class="spec-grid">
+                <span class="spec-label">Quantum Threat Level:</span>
+                <span class="spec-value">ELEVATED - Preparation Phase Active</span>
+                <span class="spec-label">Post-Quantum Standards:</span>
+                <span class="spec-value">NIST Finalized - Deployment Initiated</span>
+                <span class="spec-label">Lightweight Crypto:</span>
+                <span class="spec-value">ASCON Standard Released</span>
+                <span class="spec-label">IoT Security Status:</span>
+                <span class="spec-value">Critical - Massive Deployment Required</span>
+            </div>
+        </div>
+
+        <div id="latest-2025" class="content-section">
+            <h2>>> 2025 ENCRYPTION STANDARDS</h2>
+            
+            <div class="encryption-grid">
+                <div class="encryption-card">
+                    <h4>AES-256-GCM <span class="status-badge">CURRENT</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Status:</span>
+                        <span class="spec-value">Industry Standard</span>
+                        <span class="spec-label">Key Size:</span>
+                        <span class="spec-value">256-bit</span>
+                        <span class="spec-label">Mode:</span>
+                        <span class="spec-value">Galois/Counter Mode</span>
+                        <span class="spec-label">Performance:</span>
+                        <span class="spec-value">Hardware Optimized</span>
+                    </div>
+                    <div class="code-block">
+PLAINTEXT: CLASSIFIED_DATA_STREAM
+CIPHERTEXT: 9D6F1A7C29EB6102AFCE39B8D3A7EUFF2189A9DB3...
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>CHACHA20-POLY1305 <span class="status-badge">MODERN</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Status:</span>
+                        <span class="spec-value">Google/IETF Standard</span>
+                        <span class="spec-label">Advantage:</span>
+                        <span class="spec-value">Mobile Optimized</span>
+                        <span class="spec-label">Use Case:</span>
+                        <span class="spec-value">IoT & Mobile Devices</span>
+                        <span class="spec-label">Security:</span>
+                        <span class="spec-value">Authenticated Encryption</span>
+                    </div>
+                    <div class="code-block">
+PLAINTEXT: MOBILE_COMM_PROTOCOL
+CIPHERTEXT: U7ACB910EE21C0F3AABB5C7E5D123A6F...
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>ASCON FAMILY <span class="status-badge new">2025 NIST</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Status:</span>
+                        <span class="spec-value">NIST SP 800-232</span>
+                        <span class="spec-label">Purpose:</span>
+                        <span class="spec-value">Lightweight Cryptography</span>
+                        <span class="spec-label">Target:</span>
+                        <span class="spec-value">IoT & Constrained Devices</span>
+                        <span class="spec-label">Release:</span>
+                        <span class="spec-value">August 2025</span>
+                    </div>
+                    <div class="code-block">
+PLAINTEXT: IOT_SENSOR_DATA_001
+CIPHERTEXT: K93J085L1XPDNV7FReCOZM5LT9V...
+                    </div>
+                </div>
+            </div>
+
+            <h3>COMPLIANCE REQUIREMENTS 2025:</h3>
+            <div class="threat-alert">
+                <p><strong>PCI DSS 4.0.1:</strong> Enforcement deadline March 2025 - Enhanced cryptographic requirements now mandatory</p>
+                <p><strong>HIPAA 2025:</strong> Mandatory encryption of all ePHI data at rest and in transit with limited exceptions</p>
+            </div>
+        </div>
+
+        <div id="post-quantum" class="content-section">
+            <h2>>> POST-QUANTUM CRYPTOGRAPHY</h2>
+            
+            <div class="threat-alert">
+                <h3>QUANTUM THREAT ASSESSMENT</h3>
+                <p>Intelligence reports indicate quantum computing capabilities are advancing rapidly. Current RSA and ECC encryption methods face imminent obsolescence. Immediate migration to post-quantum standards is recommended for all critical systems.</p>
+            </div>
+
+            <div class="encryption-grid">
+                <div class="encryption-card">
+                    <h4>CRYSTALS-KYBER (ML-KEM) <span class="status-badge quantum">FIPS 203</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">NIST Standard:</span>
+                        <span class="spec-value">FIPS 203 - Key Establishment</span>
+                        <span class="spec-label">Algorithm Base:</span>
+                        <span class="spec-value">Lattice-Based Cryptography</span>
+                        <span class="spec-label">Security Level:</span>
+                        <span class="spec-value">128, 192, 256-bit equivalent</span>
+                        <span class="spec-label">Status:</span>
+                        <span class="spec-value">Production Ready</span>
+                    </div>
+                    <div class="code-block">
+PLAINTEXT: QUANTUM_SECURE_KEY_EXCHANGE
+CIPHERTEXT: MNB8OILP95J8TXCSDF7RLWVZOKGHYZ...
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>CRYSTALS-DILITHIUM (ML-DSA) <span class="status-badge quantum">FIPS 204</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">NIST Standard:</span>
+                        <span class="spec-value">FIPS 204 - Digital Signatures</span>
+                        <span class="spec-label">Algorithm Base:</span>
+                        <span class="spec-value">Lattice-Based Cryptography</span>
+                        <span class="spec-label">Signature Size:</span>
+                        <span class="spec-value">2420-3309 bytes</span>
+                        <span class="spec-label">Status:</span>
+                        <span class="spec-value">Production Ready</span>
+                    </div>
+                    <div class="code-block">
+PLAINTEXT: DIGITAL_SIGNATURE_VERIFICATION
+SIGNATURE: 0A7CB96DD5A6D8E5QBE45C90B67F...
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>HQC ALGORITHM <span class="status-badge new">NIST 2025</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Status:</span>
+                        <span class="spec-value">Fifth NIST Selection</span>
+                        <span class="spec-label">Purpose:</span>
+                        <span class="spec-value">Alternative to ML-KEM</span>
+                        <span class="spec-label">Base:</span>
+                        <span class="spec-value">Error-Correcting Codes</span>
+                        <span class="spec-label">Advantage:</span>
+                        <span class="spec-value">Different Math Foundation</span>
+                    </div>
+                    <div class="code-block">
+PLAINTEXT: BACKUP_QUANTUM_RESISTANCE
+CIPHERTEXT: K93JDB5L1XPDNV7FRECOZM5UT9V...
+                    </div>
+                </div>
+            </div>
+
+            <h3>QUANTUM MIGRATION ROADMAP:</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="year">2024 Q4</span>
+                    <h4>NIST Standards Finalized</h4>
+                    <p>Post-quantum cryptography standards officially published and ready for implementation.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2025 Q1</span>
+                    <h4>Early Adopter Phase</h4>
+                    <p>Government agencies and critical infrastructure begin hybrid implementations.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2025 Q2</span>
+                    <h4>Commercial Deployment</h4>
+                    <p>Major tech companies release post-quantum enabled products and services.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2026-2030</span>
+                    <h4>Full Migration Period</h4>
+                    <p>Complete transition to post-quantum cryptography across all sectors.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="lightweight" class="content-section">
+            <h2>>> LIGHTWEIGHT CRYPTOGRAPHY</h2>
+            
+            <div class="threat-alert">
+                <h3>IOT SECURITY CRISIS</h3>
+                <p>With over 75 billion IoT devices projected by 2025, traditional cryptography is too resource-intensive for constrained devices. NIST's lightweight cryptography standard ASCON addresses this critical gap.</p>
+            </div>
+
+            <div class="encryption-grid">
+                <div class="encryption-card">
+                    <h4>ASCON-128 <span class="status-badge new">NIST SP 800-232</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Release Date:</span>
+                        <span class="spec-value">August 2025</span>
+                        <span class="spec-label">Key Size:</span>
+                        <span class="spec-value">128-bit</span>
+                        <span class="spec-label">Block Size:</span>
+                        <span class="spec-value">64-bit</span>
+                        <span class="spec-label">Performance:</span>
+                        <span class="spec-value">Ultra-low power consumption</span>
+                    </div>
+                    <div class="code-block">
+DEVICE: SMART_SENSOR_NODE_001
+CIPHERTEXT: A7B9C2D1E8F4G6H3I5J7K9L2M4N6...
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>ASCON-128a <span class="status-badge new">HIGH SPEED</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Variant:</span>
+                        <span class="spec-value">Speed Optimized</span>
+                        <span class="spec-label">Use Case:</span>
+                        <span class="spec-value">Network Processing</span>
+                        <span class="spec-label">Throughput:</span>
+                        <span class="spec-value">40% faster than ASCON-128</span>
+                        <span class="spec-label">Security:</span>
+                        <span class="spec-value">Authenticated Encryption</span>
+                    </div>
+                    <div class="code-block">
+NETWORK: IOT_MESH_COMMUNICATION
+CIPHERTEXT: X3Y7Z1A9B5C2D8E4F6G9H2I7J4K...
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>ASCON-HASH <span class="status-badge new">HASHING</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Function:</span>
+                        <span class="spec-value">Cryptographic Hash Function</span>
+                        <span class="spec-label">Output Size:</span>
+                        <span class="spec-value">256-bit</span>
+                        <span class="spec-label">Resistance:</span>
+                        <span class="spec-value">Collision & Pre-image</span>
+                        <span class="spec-label">Application:</span>
+                        <span class="spec-value">Digital Signatures, MACs</span>
+                    </div>
+                    <div class="code-block">
+INPUT: SENSOR_DATA_INTEGRITY_CHECK
+HASH: 3F2E1D9C8B7A695847362514...
+                    </div>
+                </div>
+            </div>
+
+            <h3>IMPLEMENTATION REQUIREMENTS:</h3>
+            <div class="spec-grid">
+                <span class="spec-label">Memory Footprint:</span>
+                <span class="spec-value">< 2KB RAM, < 10KB ROM</span>
+                <span class="spec-label">Power Consumption:</span>
+                <span class="spec-value">Optimized for battery-powered devices</span>
+                <span class="spec-label">Processing:</span>
+                <span class="spec-value">8-bit microcontroller compatible</span>
+                <span class="spec-label">Compliance:</span>
+                <span class="spec-value">NIST SP 800-232 Standard</span>
+            </div>
+        </div>
+
+        <div id="threats" class="content-section">
+            <h2>>> THREAT INTELLIGENCE 2025</h2>
+
+            <div class="threat-alert">
+                <h3>ACTIVE THREAT VECTORS</h3>
+                <p>Cybercriminal organizations are rapidly adapting to new encryption standards. State-sponsored actors are conducting "harvest now, decrypt later" attacks, collecting encrypted data for future quantum decryption capabilities.</p>
+            </div>
+
+            <h3>CURRENT ATTACK METHODOLOGIES:</h3>
+            <div class="encryption-grid">
+                <div class="encryption-card">
+                    <h4>QUANTUM SUPREMACY THREAT <span class="status-badge quantum">CRITICAL</span></h4>
+                    <p><strong>Shor's Algorithm:</strong> Capable of breaking RSA, ECC, and ECDH encryption in polynomial time once large-scale quantum computers are available.</p>
+                    <p><strong>Grover's Algorithm:</strong> Reduces effective key strength of symmetric encryption by 50% (AES-256 becomes equivalent to AES-128).</p>
+                    <p><strong>Timeline:</strong> Cryptographically relevant quantum computers estimated 2030-2035.</p>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>SIDE-CHANNEL ATTACKS <span class="status-badge">ACTIVE</span></h4>
+                    <p><strong>Power Analysis:</strong> Exploiting power consumption patterns during cryptographic operations.</p>
+                    <p><strong>Timing Attacks:</strong> Measuring execution time variations to extract secret keys.</p>
+                    <p><strong>Electromagnetic:</strong> Analyzing EM emissions from cryptographic hardware.</p>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>AI-POWERED CRYPTANALYSIS <span class="status-badge new">EMERGING</span></h4>
+                    <p><strong>Machine Learning:</strong> Neural networks trained to identify weaknesses in cryptographic implementations.</p>
+                    <p><strong>Pattern Recognition:</strong> Advanced algorithms detecting subtle vulnerabilities in encrypted data.</p>
+                    <p><strong>Automated Attacks:</strong> AI-driven systems capable of adapting attack strategies in real-time.</p>
+                </div>
+            </div>
+
+            <h3>MITIGATION STRATEGIES:</h3>
+            <div class="code-block">
+[IMPLEMENT] Post-quantum cryptography migration
+[DEPLOY] Hardware security modules (HSMs)
+[ENABLE] Perfect forward secrecy protocols
+[UPDATE] Regular cryptographic library updates
+[MONITOR] Continuous security assessment
+[TRAIN] Personnel on latest threat vectors
+            </div>
+        </div>
+
+        <div id="qr-generator" class="content-section">
+            <div class="qr-generator">
+                <h2>>> SECURE QR CODE GENERATOR</h2>
+                <p>Generate quantum-resistant QR codes for secure information sharing. Optimized for cybersecurity operations and secure communications.</p>
+                
+                <div class="qr-input-group">
+                    <input type="text" id="qrInput" class="qr-input" placeholder="[INPUT] Data to encode...">
+                    <select id="qrType" class="qr-input" style="flex: 0 0 150px;">
+                        <option value="text">[TEXT]</option>
+                        <option value="url">[URL]</option>
+                        <option value="wifi">[WIFI]</option>
+                        <option value="email">[EMAIL]</option>
+                        <option value="sms">[SMS]</option>
+                    </select>
+                    <button class="qr-btn" onclick="generateQR()">[GENERATE]</button>
+                </div>
+
+                <div id="wifiFields" style="display: none; margin: 20px 0;">
+                    <div class="qr-input-group">
+                        <input type="text" id="wifiSSID" class="qr-input" placeholder="[SSID] Network Name">
+                        <input type="password" id="wifiPassword" class="qr-input" placeholder="[PSK] Network Password">
+                        <select id="wifiSecurity" class="qr-input" style="flex: 0 0 100px;">
+                            <option value="WPA">[WPA]</option>
+                            <option value="WEP">[WEP]</option>
+                            <option value="nopass">[OPEN]</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="qr-output" id="qrOutput">
+                    <div class="code-block">
+>>> AWAITING INPUT DATA FOR QR GENERATION <<<
+[STATUS] Ready to generate secure QR codes
+[SECURITY] All data processed locally - No external transmission
+                    </div>
+                </div>
+
+                <div class="threat-alert">
+                    <h3>OPERATIONAL SECURITY GUIDELINES</h3>
+                    <div class="code-block">
+[OPSEC-001] Never embed classified information in QR codes
+[OPSEC-002] Use HTTPS URLs only for web links  
+[OPSEC-003] Verify QR integrity before distribution
+[OPSEC-004] Implement time-based expiration for sensitive codes
+[OPSEC-005] Use encrypted channels for QR code sharing
+[OPSEC-006] Regular rotation of WiFi credentials in QR codes
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="ascii-art">
+            ██████╗ ███████╗ ██████╗██╗   ██╗██████╗ ███████╗    ████████╗██╗  ██╗███████╗
+            ██╔══██╗██╔════╝██╔════╝██║   ██║██╔══██╗██╔════╝    ╚══██╔══╝██║  ██║██╔════╝
+            ██████╔╝█████╗  ██║     ██║   ██║██████╔╝█████╗         ██║   ███████║█████╗  
+            ██╔══██╗██╔══╝  ██║     ██║   ██║██╔══██╗██╔══╝         ██║   ██╔══██║██╔══╝  
+            ██████╔╝███████╗╚██████╗╚██████╔╝██║  ██║███████╗       ██║   ██║  ██║███████╗
+            ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝       ╚═╝   ╚═╝  ╚═╝╚══════╝
+                                    ███████╗██╗   ██╗████████╗██╗   ██╗██████╗ ███████╗
+                                    ██╔════╝██║   ██║╚══██╔══╝██║   ██║██╔══██╗██╔════╝
+                                    █████╗  ██║   ██║   ██║   ██║   ██║██████╔╝█████╗  
+                                    ██╔══╝  ██║   ██║   ██║   ██║   ██║██╔══██╗██╔══╝  
+                                    ██║     ╚██████╔╝   ██║   ╚██████╔╝██║  ██║███████╗
+                                    ╚═╝      ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝
+            </div>
+            <p><strong>3NC4YPT10N - ADVANCED CYBER SECURITY HUB</strong></p>
+            <p>[CLASSIFIED] | [SECURE] | [QUANTUM-RESISTANT] | [OPERATIONAL SINCE 2025]</p>
+            <p><em>>>> REMEMBER: Security is not a destination, but a continuous operation <<<</em></p>
+            <div class="code-block" style="margin-top: 20px; font-size: 0.8rem;">
+SYSTEM STATUS: [ONLINE] | THREAT LEVEL: [ELEVATED] | ENCRYPTION: [ACTIVE]
+LAST UPDATE: September 2025 | INTEL SOURCE: NIST, NSA, CISA
+[END OF TRANSMISSION]
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Matrix-like background effect
+        function createMatrixEffect() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const matrixBg = document.getElementById('matrixBg');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            matrixBg.appendChild(canvas);
+
+            const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const fontSize = 10;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00ff41';
+                ctx.font = fontSize + 'px Source Code Pro';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(draw, 33);
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Handle WiFi fields visibility
+            if (sectionId === 'qr-generator') {
+                updateQRFields();
+            }
+        }
+
+        function updateQRFields() {
+            const qrType = document.getElementById('qrType').value;
+            const wifiFields = document.getElementById('wifiFields');
+            
+            if (qrType === 'wifi') {
+                wifiFields.style.display = 'block';
+            } else {
+                wifiFields.style.display = 'none';
+            }
+        }
+
+        function generateQR() {
+            const qrOutput = document.getElementById('qrOutput');
+            const qrType = document.getElementById('qrType').value;
+            let qrText = '';
+
+            switch(qrType) {
+                case 'wifi':
+                    const ssid = document.getElementById('wifiSSID').value;
+                    const password = document.getElementById('wifiPassword').value;
+                    const security = document.getElementById('wifiSecurity').value;
+                    
+                    if (!ssid) {
+                        alert('[ERROR] SSID required for WiFi QR generation');
+                        return;
+                    }
+                    
+                    qrText = `WIFI:T:${security};S:${ssid};P:${password};H:false;;`;
+                    break;
+                
+                case 'url':
+                    qrText = document.getElementById('qrInput').value;
+                    if (qrText && !qrText.startsWith('http://') && !qrText.startsWith('https://')) {
+                        qrText = 'https://' + qrText;
+                    }
+                    break;
+                
+                case 'email':
+                    qrText = 'mailto:' + document.getElementById('qrInput').value;
+                    break;
+                
+                case 'sms':
+                    qrText = 'sms:' + document.getElementById('qrInput').value;
+                    break;
+                
+                default:
+                    qrText = document.getElementById('qrInput').value;
+            }
+
+            if (!qrText || qrText.trim() === '') {
+                alert('[ERROR] Input data required for QR generation');
+                return;
+            }
+
+            // Show generation status
+            qrOutput.innerHTML = `
+                <div class="code-block">
+>>> GENERATING SECURE QR CODE <<<
+[STATUS] Processing input data...
+[SECURITY] Local generation - No external transmission
+                </div>
+            `;
+            
+            // Create canvas element
+            const canvas = document.createElement('canvas');
+            
+            // Generate QR code with cyberpunk styling
+            QRCode.toCanvas(canvas, qrText, {
+                width: 300,
+                margin: 2,
+                color: {
+                    dark: '#00ff41',
+                    light: '#000000'
+                }
+            }, function(error) {
+                if (error) {
+                    qrOutput.innerHTML = `
+                        <div class="code-block">
+[ERROR] QR generation failed
+[STATUS] Please verify input data and retry
+[DEBUG] ${error.message}
+                        </div>
+                    `;
+                } else {
+                    qrOutput.innerHTML = `
+                        <div class="code-block">
+>>> QR CODE GENERATION SUCCESSFUL <<<
+[STATUS] Secure QR code ready for deployment
+[ENCODING] ${qrText.length} characters encoded
+                        </div>
+                    `;
+                    qrOutput.appendChild(canvas);
+                    
+                    // Add download functionality
+                    const downloadLink = document.createElement('a');
+                    downloadLink.download = 'secure_qr_code.png';
+                    downloadLink.href = canvas.toDataURL();
+                    downloadLink.textContent = '[DOWNLOAD QR CODE]';
+                    downloadLink.className = 'qr-btn';
+                    downloadLink.style.display = 'block';
+                    downloadLink.style.marginTop = '20px';
+                    downloadLink.style.textAlign = 'center';
+                    downloadLink.style.textDecoration = 'none';
+                    qrOutput.appendChild(downloadLink);
+                }
+            });
+        }
+
+        // Event listeners
+        document.getElementById('qrType').addEventListener('change', updateQRFields);
+        document.getElementById('qrInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generateQR();
+            }
+        });
+
+        // Initialize matrix effect and setup
+        window.addEventListener('load', function() {
+            createMatrixEffect();
+            updateQRFields();
+        });
+
+        // Responsive matrix canvas
+        window.addEventListener('resize', function() {
+            const canvas = document.querySelector('#matrixBg canvas');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
+    </script>
+</body>
+</html>
