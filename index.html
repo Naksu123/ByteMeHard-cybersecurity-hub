@@ -548,22 +548,288 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            header {
+                margin: 10px 0;
+                padding: 20px 15px;
+            }
+
+            .ascii-art {
+                font-size: 0.4rem;
+                line-height: 0.8;
+                overflow-x: auto;
+            }
+
             h1 {
-                font-size: 2.5rem;
-                letter-spacing: 2px;
+                font-size: 2rem;
+                letter-spacing: 1px;
+                margin-bottom: 15px;
             }
             
+            .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+
             .nav-tabs {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
+                padding: 15px 10px;
+                gap: 8px;
+            }
+
+            .tab-btn {
+                padding: 12px 15px;
+                font-size: 0.8rem;
+                text-align: center;
+                width: 100%;
             }
             
-            .qr-input-group {
-                flex-direction: column;
+            .content-section {
+                padding: 20px 15px;
+                margin: 10px 0;
             }
-            
+
+            h2 {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+                margin: 20px 0 15px 0;
+            }
+
             .encryption-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+                margin: 20px 0;
+            }
+
+            .encryption-card {
+                padding: 20px 15px;
+            }
+
+            .encryption-card h4 {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+            }
+
+            .status-badge {
+                display: block;
+                margin: 8px 0 0 0;
+                padding: 4px 8px;
+                font-size: 0.7rem;
+                text-align: center;
+                width: fit-content;
+            }
+
+            .spec-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            .spec-label {
+                margin-bottom: 5px;
+            }
+
+            .spec-value {
+                margin-bottom: 15px;
+                padding-left: 10px;
+                border-left: 2px solid #00ff41;
+            }
+
+            .code-block {
+                padding: 15px;
+                font-size: 0.8rem;
+                overflow-x: auto;
+            }
+
+            .code-block::before {
+                font-size: 0.6rem;
+                padding: 1px 5px;
+            }
+            
+            .qr-generator {
+                padding: 20px 15px;
+            }
+
+            .qr-input-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .qr-input, .qr-select {
+                min-width: unset;
+                width: 100%;
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            .qr-btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+
+            .qr-output {
+                padding: 20px 15px;
+                margin: 20px 0;
+            }
+
+            .threat-alert {
+                padding: 15px;
+                margin: 15px 0;
+                font-size: 0.9rem;
+            }
+
+            .threat-alert::before {
+                font-size: 1.2rem;
+            }
+
+            .timeline {
+                padding-left: 25px;
+                margin: 25px 0;
+            }
+
+            .timeline::before {
+                left: 12px;
+            }
+
+            .timeline-item {
+                padding: 15px;
+                margin-bottom: 25px;
+            }
+
+            .timeline-item::before {
+                left: -31px;
+                top: 15px;
+                width: 12px;
+                height: 12px;
+            }
+
+            .year {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+
+            footer {
+                padding: 25px 15px;
+                margin-top: 30px;
+            }
+
+            footer .ascii-art {
+                font-size: 0.3rem;
+                line-height: 0.7;
+            }
+
+            footer .code-block {
+                font-size: 0.7rem;
+                padding: 10px;
+            }
+
+            /* Fix matrix background on mobile */
+            .matrix-bg canvas {
+                width: 100% !important;
+                height: 100vh !important;
+            }
+
+            /* Improve text readability on mobile */
+            body {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            /* Better button spacing */
+            .qr-btn:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            /* Ensure proper scrolling */
+            html, body {
+                overflow-x: hidden;
+            }
+        }
+
+        /* Additional mobile improvements for very small screens */
+        @media (max-width: 480px) {
+            .ascii-art {
+                display: none; /* Hide ASCII art on very small screens */
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            .tab-btn {
+                padding: 10px 12px;
+                font-size: 0.75rem;
+            }
+
+            .content-section {
+                padding: 15px 10px;
+            }
+
+            .encryption-card {
+                padding: 15px 10px;
+            }
+
+            .code-block {
+                font-size: 0.75rem;
+                padding: 12px;
+            }
+
+            .qr-input, .qr-select {
+                padding: 10px;
+                font-size: 0.85rem;
+            }
+
+            footer {
+                padding: 20px 10px;
+            }
+        }
+
+        /* Landscape mode adjustments for mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            header {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-tabs {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .tab-btn {
+                flex: 0 0 auto;
+                width: auto;
+                margin: 2px;
             }
         }
 
@@ -606,6 +872,8 @@
             <button class="tab-btn" onclick="showSection('latest-2025')">[2025 STANDARDS]</button>
             <button class="tab-btn" onclick="showSection('post-quantum')">[POST-QUANTUM]</button>
             <button class="tab-btn" onclick="showSection('lightweight')">[LIGHTWEIGHT]</button>
+            <button class="tab-btn" onclick="showSection('homomorphic')">[HOMOMORPHIC]</button>
+            <button class="tab-btn" onclick="showSection('zero-knowledge')">[ZERO-KNOWLEDGE]</button>
             <button class="tab-btn" onclick="showSection('threats')">[THREAT INTEL]</button>
             <button class="tab-btn" onclick="showSection('qr-generator')">[QR-GEN]</button>
         </div>
@@ -872,7 +1140,216 @@ HASH: 3F2E1D9C8B7A695847362514...
             </div>
         </div>
 
-        <div id="threats" class="content-section">
+        <div id="homomorphic" class="content-section">
+            <h2>>> HOMOMORPHIC ENCRYPTION</h2>
+            
+            <div class="threat-alert">
+                <h3>BREAKTHROUGH CRYPTOGRAPHIC CAPABILITY</h3>
+                <p>Homomorphic encryption allows computations on encrypted data without decrypting it first. This revolutionary technology enables secure cloud computing, privacy-preserving analytics, and confidential machine learning operations.</p>
+            </div>
+
+            <div class="encryption-grid">
+                <div class="encryption-card">
+                    <h4>FULLY HOMOMORPHIC ENCRYPTION (FHE) <span class="status-badge new">2024-2025</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Capability:</span>
+                        <span class="spec-value">Unlimited Operations</span>
+                        <span class="spec-label">Leading Solutions:</span>
+                        <span class="spec-value">Microsoft SEAL, IBM HElib</span>
+                        <span class="spec-label">Performance:</span>
+                        <span class="spec-value">10,000x slower than plaintext</span>
+                        <span class="spec-label">Use Cases:</span>
+                        <span class="spec-value">Secure Cloud Computing</span>
+                    </div>
+                    <div class="code-block">
+INPUT: ENCRYPTED_DATABASE_QUERY
+OPERATION: SUM(ENCRYPTED_VALUES) 
+OUTPUT: ENCRYPTED_RESULT_WITHOUT_DECRYPTION
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>PARTIALLY HOMOMORPHIC ENCRYPTION <span class="status-badge">PRACTICAL</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Types:</span>
+                        <span class="spec-value">Additive, Multiplicative</span>
+                        <span class="spec-label">Examples:</span>
+                        <span class="spec-value">RSA (multiplicative), Paillier (additive)</span>
+                        <span class="spec-label">Performance:</span>
+                        <span class="spec-value">Much faster than FHE</span>
+                        <span class="spec-label">Limitations:</span>
+                        <span class="spec-value">Single operation type only</span>
+                    </div>
+                    <div class="code-block">
+ENCRYPTED_A + ENCRYPTED_B = ENCRYPTED(A + B)
+ENCRYPTED_A * ENCRYPTED_B = ENCRYPTED(A * B)
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>LATTICE-BASED FHE <span class="status-badge quantum">QUANTUM-SAFE</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Schemes:</span>
+                        <span class="spec-value">CKKS, BFV, BGV</span>
+                        <span class="spec-label">Advantage:</span>
+                        <span class="spec-value">Post-quantum secure</span>
+                        <span class="spec-label">Applications:</span>
+                        <span class="spec-value">Machine Learning, Analytics</span>
+                        <span class="spec-label">Status:</span>
+                        <span class="spec-value">Production deployments starting</span>
+                    </div>
+                    <div class="code-block">
+ENCRYPTED_ML_MODEL.PREDICT(ENCRYPTED_DATA)
+RESULT: ENCRYPTED_PREDICTION_OUTPUT
+                    </div>
+                </div>
+            </div>
+
+            <h3>REAL-WORLD APPLICATIONS 2025:</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="year">HEALTHCARE</span>
+                    <h4>Privacy-Preserving Medical Analytics</h4>
+                    <p>Hospitals can perform statistical analysis on encrypted patient data without exposing individual records, enabling research while maintaining HIPAA compliance.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">FINANCE</span>
+                    <h4>Secure Financial Computations</h4>
+                    <p>Banks can calculate risk assessments and fraud detection on encrypted transaction data without revealing sensitive customer information.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">CLOUD AI</span>
+                    <h4>Confidential Machine Learning</h4>
+                    <p>AI models can be trained and perform inference on encrypted data, enabling secure cloud-based AI services without data exposure.</p>
+                </div>
+            </div>
+
+            <h3>IMPLEMENTATION CHALLENGES:</h3>
+            <div class="code-block">
+[PERFORMANCE] 10,000x-1,000,000x slower than plaintext operations
+[COMPLEXITY] Requires specialized cryptographic expertise
+[BOOTSTRAPPING] Noise management in FHE schemes
+[MEMORY] Significant storage overhead for encrypted data
+[PRECISION] Limited precision in floating-point operations
+[SCALING] Challenges with large-scale deployments
+            </div>
+        </div>
+
+        <div id="zero-knowledge" class="content-section">
+            <h2>>> ZERO-KNOWLEDGE PROOFS</h2>
+            
+            <div class="threat-alert">
+                <h3>PRIVACY-PRESERVING AUTHENTICATION</h3>
+                <p>Zero-knowledge proofs allow verification of information without revealing the underlying data. This cryptographic primitive is revolutionizing privacy-preserving systems, blockchain applications, and identity verification protocols.</p>
+            </div>
+
+            <div class="encryption-grid">
+                <div class="encryption-card">
+                    <h4>ZK-SNARKs <span class="status-badge new">BLOCKCHAIN READY</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Full Name:</span>
+                        <span class="spec-value">Zero-Knowledge Succinct Non-Interactive Arguments</span>
+                        <span class="spec-label">Properties:</span>
+                        <span class="spec-value">Constant size proofs, fast verification</span>
+                        <span class="spec-label">Applications:</span>
+                        <span class="spec-value">Zcash, Tornado Cash, Layer 2 scaling</span>
+                        <span class="spec-label">Trusted Setup:</span>
+                        <span class="spec-value">Required (potential vulnerability)</span>
+                    </div>
+                    <div class="code-block">
+PROVER: "I know a secret that satisfies condition X"
+VERIFIER: "Proof verified - condition X is satisfied"
+SECRET: [NEVER REVEALED TO VERIFIER]
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>ZK-STARKs <span class="status-badge quantum">QUANTUM-RESISTANT</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Full Name:</span>
+                        <span class="spec-value">Zero-Knowledge Scalable Transparent Arguments</span>
+                        <span class="spec-label">Advantage:</span>
+                        <span class="spec-value">No trusted setup required</span>
+                        <span class="spec-label">Security:</span>
+                        <span class="spec-value">Post-quantum secure</span>
+                        <span class="spec-label">Trade-off:</span>
+                        <span class="spec-value">Larger proof sizes than SNARKs</span>
+                    </div>
+                    <div class="code-block">
+PROOF_SIZE: Larger than SNARKs but still practical
+VERIFICATION: Fast and transparent
+SECURITY: Quantum-computer resistant
+                    </div>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>BULLETPROOFS <span class="status-badge">RANGE PROOFS</span></h4>
+                    <div class="spec-grid">
+                        <span class="spec-label">Purpose:</span>
+                        <span class="spec-value">Range and arithmetic circuit proofs</span>
+                        <span class="spec-label">Applications:</span>
+                        <span class="spec-value">Monero, confidential transactions</span>
+                        <span class="spec-label">Advantage:</span>
+                        <span class="spec-value">No trusted setup, short proofs</span>
+                        <span class="spec-label">Performance:</span>
+                        <span class="spec-value">Logarithmic proof size</span>
+                    </div>
+                    <div class="code-block">
+STATEMENT: "My account balance is positive"
+PROOF: [MATHEMATICAL PROOF WITHOUT REVEALING AMOUNT]
+VERIFICATION: TRUE (balance > 0 confirmed)
+                    </div>
+                </div>
+            </div>
+
+            <h3>PRACTICAL APPLICATIONS 2025:</h3>
+            <div class="encryption-grid">
+                <div class="encryption-card">
+                    <h4>IDENTITY VERIFICATION <span class="status-badge new">DEPLOYED</span></h4>
+                    <p><strong>Age Verification:</strong> Prove you're over 18 without revealing your birth date or exact age.</p>
+                    <p><strong>Credential Verification:</strong> Confirm educational degrees or professional licenses without exposing personal details.</p>
+                    <p><strong>Location Proofs:</strong> Verify presence in a jurisdiction without revealing exact location.</p>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>FINANCIAL PRIVACY <span class="status-badge">REGULATORY COMPLIANT</span></h4>
+                    <p><strong>Tax Compliance:</strong> Prove correct tax calculations without revealing income details.</p>
+                    <p><strong>Credit Scoring:</strong> Verify creditworthiness without exposing financial history.</p>
+                    <p><strong>Regulatory Reporting:</strong> Demonstrate compliance without revealing proprietary information.</p>
+                </div>
+
+                <div class="encryption-card">
+                    <h4>BLOCKCHAIN SCALING <span class="status-badge">LAYER 2</span></h4>
+                    <p><strong>Rollups:</strong> Polygon zkEVM, zkSync enabling faster, cheaper transactions.</p>
+                    <p><strong>Private Transactions:</strong> Zcash-style privacy coins with regulatory compliance features.</p>
+                    <p><strong>Cross-chain Bridges:</strong> Secure interoperability between different blockchains.</p>
+                </div>
+            </div>
+
+            <h3>DEVELOPMENT FRAMEWORKS 2025:</h3>
+            <div class="spec-grid">
+                <span class="spec-label">Circom/SnarkJS:</span>
+                <span class="spec-value">Popular SNARK development framework</span>
+                <span class="spec-label">ZoKrates:</span>
+                <span class="spec-value">High-level language for zkSNARKs</span>
+                <span class="spec-label">Cairo:</span>
+                <span class="spec-value">StarkNet's programming language</span>
+                <span class="spec-label">Aleo:</span>
+                <span class="spec-value">Platform for private applications</span>
+                <span class="spec-label">Miden VM:</span>
+                <span class="spec-value">STARK-based virtual machine</span>
+            </div>
+
+            <h3>IMPLEMENTATION CONSIDERATIONS:</h3>
+            <div class="code-block">
+[SETUP] Trusted setup ceremony for SNARKs (security critical)
+[PERFORMANCE] Proof generation can be computationally intensive
+[COMPLEXITY] Requires specialized cryptographic knowledge
+[AUDITING] Circuit logic must be thoroughly reviewed
+[PRIVACY] Proper randomness generation is essential
+[SCALING] Verification scales better than proof generation
+            </div>
+        </div>
             <h2>>> THREAT INTELLIGENCE 2025</h2>
 
             <div class="threat-alert">
